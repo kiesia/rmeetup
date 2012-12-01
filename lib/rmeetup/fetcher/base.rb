@@ -77,7 +77,12 @@ module RMeetup
         end
 
         def get_response(url)
-          Net::HTTP.get_response(URI.parse(url)).body || raise(NoResponseError.new)
+          uri = URI.parse(url)
+          req = Net::HTTP::Get.new(uri.request_uri)
+          req["Accept-Charset"] = "utf-8"
+
+          res = Net::HTTP.start(uri.hostname, uri.port) { |http| http.request(req) }
+          res.body || raise(NoResponseError.new)
         end
     end
   end
