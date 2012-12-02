@@ -81,7 +81,7 @@ module RMeetup
           req = Net::HTTP::Get.new(uri.request_uri)
           req["Accept-Charset"] = "utf-8"
 
-          res = Net::HTTP.start(uri.hostname, uri.port) { |http| http.request(req) }
+          res = Net::HTTP.start(uri.host, uri.port) { |http| http.request(req) }
           res.body || raise(NoResponseError.new)
         end
     end
