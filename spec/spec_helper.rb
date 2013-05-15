@@ -23,56 +23,63 @@ module RMeetup::FakeResponse
         File.read(File.join(TEST_ROOT, 'responses', 'error.json'))
       end
   end
-  
+
   module Cities
     protected
       def get_response(url)
         File.read(File.join(TEST_ROOT, 'responses', 'cities.json'))
       end
   end
-  
+
+  module Venues
+    protected
+      def get_response(url)
+        File.read(File.join(TEST_ROOT, 'responses', 'venues.json'))
+      end
+  end
+
   module Comments
     protected
       def get_response(url)
         File.read(File.join(TEST_ROOT, 'responses', 'comments.json'))
       end
   end
-  
+
   module Events
     protected
       def get_response(url)
         File.read(File.join(TEST_ROOT, 'responses', 'events.json'))
       end
   end
-  
+
   module Groups
     protected
       def get_response(url)
         File.read(File.join(TEST_ROOT, 'responses', 'groups.json'))
       end
   end
-  
+
   module Members
     protected
       def get_response(url)
         File.read(File.join(TEST_ROOT, 'responses', 'members.json'))
       end
   end
-  
+
   module Photos
     protected
       def get_response(url)
         File.read(File.join(TEST_ROOT, 'responses', 'photos.json'))
       end
   end
-  
+
   module Rsvps
     protected
       def get_response(url)
         File.read(File.join(TEST_ROOT, 'responses', 'rsvps.json'))
       end
   end
-  
+
   module Topics
     protected
       def get_response(url)
